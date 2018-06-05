@@ -25,7 +25,7 @@ switch nrclasses
 end
 
 
-%%-->output: normalized dataset, Diabetes status [0:1] or [0:4]
+%%-->output: normalized dataset, Diabetes status [0:1] or [0:3]
 
 %% Category selection
 %For baseline: leave all features
@@ -39,7 +39,7 @@ dataset=filterCategories(datasetLabeled, dataset);
 %-->output: indices with selected features
 
 %% Feature selection
-%for each category:
+%For each category:
 %Rank features by correlation coefficient
 %Remove all features below chosen threshold
 
@@ -54,7 +54,6 @@ dataset=removevars(dataset, featToDelete);
 %-->output: dataset with "best" features
 
 %% Train classifier
-%(choose classifier)
 
 %train with 10-fold cross validation
 mdl=fitcknn(dataset(:,2:end), 'SubjectDiabetesStatus', 'CrossVal', 'on');
