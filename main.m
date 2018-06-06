@@ -12,8 +12,6 @@ clear, close all
 load balanced
 load balancedm2
 
-dataset=balancedm2;
-
 %choose diabetes classes 0, 1, 2 and 3, or 0+1=0 and 2+3=1
 nrclasses=str2double(inputdlg('Choose classification: 2=two-class, 4=four-class'));
 
