@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%% BACHELOR ENDPROJECT MEDICAL IMAGE ANALYSIS %%%%%%%%%%%%%%%
 
 % Final method, June 2018
-% (c) Y.H. Zhu and G. Grimbergen
+% (c) 2018 Y.H. Zhu and G. Grimbergen - All Rights Reserved
 
 %% Data preparation
 %Import data, normalized, fourth column is SubjectDiabetesStatus
@@ -17,9 +17,9 @@ nrclasses=str2double(inputdlg('Choose classification: 2=two-class, 4=four-class'
 
 switch nrclasses
     case 2
-        dataset=balancedm2;
+        data=balancedm2;
     case 4
-        dataset=balanced;
+        data=balanced;
 end
 
 
@@ -31,8 +31,8 @@ end
 %Choose with or without difference features
 %Choose arteries+veins, only arteries, only veins
 
-datasetLabeled=giveLabel(dataset);
-dataset=filterCategories(datasetLabeled, dataset);
+datasetLabeled=giveLabel(data);
+data=filterCategories(datasetLabeled, data);
 
 %-->output: indices with selected features
 
@@ -43,18 +43,18 @@ dataset=filterCategories(datasetLabeled, dataset);
 
 threshold=0.05; %choose minimum value for corr coefficient
 
-[corr] = calcCorr(dataset);
+[corr] = calcCorr(data);
 
 toDelete=corr{1,:}<threshold;
 featToDelete=corr(1,toDelete).Properties.VariableNames;
-dataset=removevars(dataset, featToDelete);
+data=removevars(data, featToDelete);
 
 %-->output: dataset with "best" features
 
 %% Train classifier
 
 %train with 10-fold cross validation
-mdl=fitcknn(dataset(:,2:end), 'SubjectDiabetesStatus', 'CrossVal', 'on');
+mdl=fitcknn(data(:,2:end), 'SubjectDiabetesStatus', 'CrossVal', 'on');
 
 %-->output: trained cross-validated model
 
@@ -64,6 +64,6 @@ mdl=fitcknn(dataset(:,2:end), 'SubjectDiabetesStatus', 'CrossVal', 'on');
 
 posclass=1; %choose which class to evaluate as positive
 
-[AUC, acc, prec, rec]=evalPerf(mdl, dataset, nrclasses, posclass);
+[AUC, acc, prec, rec]=evalPerf(mdl, data, nrclasses, posclass);
 
 %-->output: evaluation metrics
