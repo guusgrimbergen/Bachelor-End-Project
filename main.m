@@ -62,7 +62,7 @@ mdl=fitcknn(data(:,2:end), 'SubjectDiabetesStatus', 'CrossVal', 'on');
 %Predict labels within folds
 %Calculate evaluation metrics: AUC, accuracy, precision, recall
 
-posclass=1; %choose which class to evaluate as positive
+posclass=nrclass-1; %Positive class is unhealthy/diabetes
 
 [AUC, acc, prec, rec]=evalPerf(mdl, data, nrclasses, posclass);
 
