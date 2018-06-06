@@ -5,7 +5,7 @@ Final method, June 2018
 
 
 Datasets:   - balanced.mat    
-             - balancedm2.mat
+            - balancedm2.mat
            
 Code:       - main.m
 		- giveLabel.m
