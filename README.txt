@@ -14,3 +14,4 @@ Code:       - main.m
                 - evalPerf.m
 	    
 Save code and datasets in the same directory. Simply run the main.m file and follow the instructions from the dialog boxes.
+More detailed explaination can be found in code's documentation.
