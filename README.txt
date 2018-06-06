@@ -1,12 +1,11 @@
-BACHELOR ENDPROJECT MEDICAL IMAGE ANALYSIS
+#BACHELOR ENDPROJECT MEDICAL IMAGE ANALYSIS
 
-Final method, June 2018
+Final method, June 2018    
 
 (c) 2018 Y.H. Zhu and G. Grimbergen - All Rights Reserved
 
-Datasets:   - balanced.mat
-
-            - balancedm2.mat
+#Datasets:   - balanced.mat    
+             - balancedm2.mat
            
 Code:       - main.m
 
