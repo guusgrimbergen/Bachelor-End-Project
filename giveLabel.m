@@ -55,14 +55,12 @@ for i=1:col
         cat=9; 
     elseif contains(name, 'BoxD')
         cat=5;
-    elseif contains(name, 'InformationD')
+    elseif contains(name, 'InformatioD')
         cat=5;
     elseif contains(name, 'CorreationD')
         cat=5;    
-    elseif contains(name, 'Lacunairy')
-        cat=5;    
-    elseif contains(name, 'BoxD')
-        cat=5;     
+    elseif contains(name, 'Lacunarity')
+        cat=5;       
     elseif contains(name, 'MF_')
         cat=5; 
     else
