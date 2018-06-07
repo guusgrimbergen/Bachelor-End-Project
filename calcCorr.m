@@ -3,8 +3,7 @@ function [corr] = calcCorr(dataset)
 %against the diabetes status, then sort in order of absolute magnitude.
 %
 %Input:
-%   - dataset: normalized dataset with n features, first column patient ID 
-%   and fourth column diabetes status
+%   - dataset: normalized dataset with n features, first column patient ID
 %Output:
 %   - corr: 1xn table, sorted by correlation coefficient in descending
 %   order, and feature names as variable names
