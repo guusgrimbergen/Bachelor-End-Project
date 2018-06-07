@@ -18,7 +18,7 @@ corr(2,:)=dataset.Properties.VariableNames(2:end);
 
 %Calculate the correlation coefficient for every feature
 for i=2:numfeat+1
-    r=abs(corrcoef(dataset{:,4}, dataset{:,i}));
+    r=abs(corrcoef(dataset.SubjectDiabetesStatus, dataset{:,i}));
     corr{1,i-1}=r(1,2); %coefficients are on the off-diagonal
 end
 
