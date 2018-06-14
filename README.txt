@@ -1,7 +1,7 @@
 BACHELOR ENDPROJECT MEDICAL IMAGE ANALYSIS
 
 Final method, June 2018    
-(c) 2018 Y.H. Zhu and G. Grimbergen - All Rights Reserved
+Y.H. Zhu and G. Grimbergen - TU Eindhoven
 
 
 Datasets:   - balanced.mat    
